@@ -1,0 +1,17 @@
+{
+  "name": "gcp-event-writer",
+  "version": "0.0.1",
+  "description": "Serverless function that writes messages from PubSub into BigQuery",
+  "engines": {
+    "node": "^16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gcp-testbruker/gcp-event-writer"
+  },
+  "author": "GCP Testbruker",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/bigquery": "^5.9.1"
+  }
+}
