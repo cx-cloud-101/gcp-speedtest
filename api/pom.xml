@@ -52,6 +52,11 @@
 			<artifactId>appengine-maven-plugin</artifactId>
 			<version>2.4.2</version>
 		</dependency>
+		<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>spring-cloud-gcp-starter-data-firestore</artifactId>
+			<version>2.0.5</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -101,7 +106,7 @@
 			</plugin>
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>appen.gine-maven-plugin</artifactId>
+				<artifactId>appengine-maven-plugin</artifactId>
 				<version>2.4.1</version>
 				<configuration>
 					<projectId>GCLOUD_PROJECT_ID</projectId>
