@@ -5,7 +5,7 @@ import datetime
 from google.cloud import bigquery
 
 # Project ID
-project_id = "sfl-cloud-101" # Your project id
+project_id = "sfl-cloud-101" # Replace with your project id
 
 # bq client
 bq_client = bigquery.Client(project=project_id)
