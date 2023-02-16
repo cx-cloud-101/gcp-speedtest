@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.7</version>
+		<version>3.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.speedtest</groupId>
@@ -14,10 +14,10 @@
 	<name>api</name>
 	<description>API for capturing SpeedTests</description>
 	<properties>
-		<java.version>11</java.version>
-		<kotlin.version>1.6.21</kotlin.version>
-		<spring-cloud-gcp.version>3.2.1</spring-cloud-gcp.version>
-		<spring-cloud.version>2021.0.1</spring-cloud.version>
+		<java.version>17</java.version>
+		<kotlin.version>1.7.22</kotlin.version>
+		<spring-cloud-gcp.version>4.0.0</spring-cloud-gcp.version>
+		<spring-cloud.version>2022.0.1</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -31,7 +31,6 @@
 		<dependency>
 			<groupId>com.google.cloud</groupId>
 			<artifactId>spring-cloud-gcp-starter-pubsub</artifactId>
-			<version>3.2.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
@@ -46,11 +45,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.cloud.tools</groupId>
-			<artifactId>appengine-maven-plugin</artifactId>
-			<version>2.4.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.cloud</groupId>
@@ -103,15 +97,6 @@
 						<version>${kotlin.version}</version>
 					</dependency>
 				</dependencies>
-			</plugin>
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>appengine-maven-plugin</artifactId>
-				<version>2.4.1</version>
-				<configuration>
-					<projectId>GCLOUD_PROJECT_ID</projectId>
-					<version>GCLOUD_CONFIG</version>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

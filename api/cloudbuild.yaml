@@ -1,0 +1,7 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/speedtest-api', '.']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: ['run', 'deploy', 'speedtest-api', '--image', 'gcr.io/$PROJECT_ID/speedtest-api', '--region', 'europe-west1', '--allow-unauthenticated']
+images: ['gcr.io/$PROJECT_ID/speedtest-api']
