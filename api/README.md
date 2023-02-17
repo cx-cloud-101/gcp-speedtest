@@ -4,13 +4,11 @@ Exposes a REST API to publish speedtest logs.
 ## GCP Setup
 1. Create PubSub topics
     1. `gcloud pubsub topic create speedtest`
-    1. `gcloud pubsub topic create speedtest-trigger`
-1. Create Datastore
-    1. Goto [Firestore](https://console.cloud.google.com/firestore) in your project
-    1. Click on create Datastore and select Firestore Mode
-1. Setup App engine: `gcloud app create`
-1. Build and deploy: `mvn clean install appengine:deploy`
-1. Deploy scheduler: `gcloud scheduler jobs create app-engine trigger --schedule="*/10 * * * *" --relative-url="/trigger" --http-method="get"`
+    2. `gcloud pubsub topic create speedtest-trigger`
+2. Create Datastore
+   1. Go to [Firestore](https://console.cloud.google.com/firestore) in your project
+   2. Click on create Datastore and select Firestore Mode
+3. Build and deploy: `mvn clean package` and `gcloud builds submit .`
 
 ## Usage
 
@@ -22,7 +20,7 @@ Submits the `Speedtest event` to the `speedtest` topic.
 {
    "user": "STRING",
    "device": "NUMBER",
-   "timestamp": "NUMBER", // epoch time in ms
+   "timestamp": "NUMBER", // epoch time in s
    "data": {
         "speeds": {
             "download": "NUMBER",
